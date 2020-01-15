@@ -1,38 +1,176 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  border: 15px solid #f9748f;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 .App {
+  min-height: 100vh;
+  background: white;
+}
+
+.header {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  color: #f9748f;
+  font-weight: 200;
+  font-size: 3rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search-form {
+  min-height: 5vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  padding-left: 40px;
+}
+
+.recipes {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.search-filter {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.recipe {
+  border-radius: 60px;
+  padding: 20px 0;
+  margin: 20px;
+  width: 400px;
+  box-shadow: 8px 5px 5px 2px #9e9c9c26;
+  letter-spacing: 1px;
+  border: 1px solid #80808024;
+}
+
+.recipe:hover,
+.recipe:active {
+  transform: scale(1.02);
+  transition: transform 200ms ease-in-out;
+}
+
+.recipe_title {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #565656;
+}
+
+.recipe h2 {
+  margin: 0;
+  padding: 10px 20px 0px 20px;
+  color: #565656;
+  font-size: 1.3rem;
+}
+
+.image_div {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  margin: -33% 0;
+}
+
+.calories {
+  text-align: center;
+}
+
+.ingredients {
+  list-style-type: none;
+  padding: 10px 20px;
+}
+
+.ingredient {
+  padding: 5px 0;
+  line-height: 1.4rem;
+}
+
+.ingredient i {
+  color: #fb466a;
+}
+
+.search-bar {
+  max-width: 320px;
+  min-width: 220px;
+  width: 45%;
+  border: none;
+  padding: 12px;
+  box-shadow: 0 0 5px 0 #00000040;
+  border-radius: 20px;
+}
+
+.search-bar::placeholder {
+  color: #00000070;
+}
+
+.search-button {
+  background-image: linear-gradient(
+    to right,
+    #f78ca0 0%,
+    #f9748f 19%,
+    #fd868c 60%,
+    #fe9a8b 100%
+  );
+  border: 1px solid #fe9a8b;
+  padding: 12px 15px;
   color: white;
+  box-shadow: 0 0 5px 0 #00000040;
+  border-radius: 20px;
+  position: relative;
+  right: 43px;
+  top: -1px;
 }
 
-.App-link {
-  color: #61dafb;
+.search-bar:focus,
+.search-bar:hover {
+  box-shadow: 0 0 5px 2px #00000040;
+  outline: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-button:focus {
+  outline: none;
+}
+
+.filters {
+  columns: auto;
+  text-align: center;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.filter {
+  display: inline-block;
+  width: auto;
+  margin: 0.25rem;
+  min-height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  border: 1px solid rgb(170, 170, 170);
+  padding: 8px 15px;
+  border-radius: 80px;
+  color: #111;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.active-filter {
+  background: #f9748f;
+  color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
